@@ -1,0 +1,24 @@
+# Ignore node modules
+**/node_modules/
+
+# Ignore build/dist folders
+**/dist/
+**/build/
+
+# Ignore environment files
+**/.env
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore logs
+*.log
+logs/
+
+# Ignore OS-related files
+*.swp
+
+# Ignore videos if needed (optional)
+# *.mp4
+# *.mov
