@@ -1,0 +1,99 @@
+.footer {
+  background: #121212;
+  color: #ddd;
+  padding: 80px 5% 40px;
+  text-align: left;
+  font-family: "Segoe UI", sans-serif;
+  margin-top: 80px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 50px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-logo {
+  width: 160px;
+  margin-bottom: 20px;
+}
+
+.footer-desc {
+  font-size: 15px;
+  color: #bbb;
+  line-height: 1.6;
+}
+
+.footer-social-icons img {
+  width: 32px;
+  margin-right: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.footer-social-icons img:hover {
+  transform: scale(1.1);
+}
+
+.footer-center h3,
+.footer-right h3 {
+  color: #ff7b00;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.footer-center ul,
+.footer-right ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-center li,
+.footer-right li {
+  margin-bottom: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.footer-center li:hover,
+.footer-right li:hover {
+  color: #ff7b00;
+}
+
+.footer hr {
+  margin: 40px 0 20px;
+  border: none;
+  height: 1px;
+  background-color: #333;
+  width: 100%;
+}
+
+.footer-copy {
+  text-align: center;
+  font-size: 14px;
+  color: #888;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    align-items: center;
+  }
+
+  .footer-center ul,
+  .footer-right ul {
+    padding-left: 0;
+  }
+}

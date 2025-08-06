@@ -1,0 +1,323 @@
+.hire-chef {
+  padding: 60px 30px;
+  text-align: center;
+  background: linear-gradient(to right, #1a1a1a, #2b2b2b);
+  margin-top: 60px;
+  border-radius: 16px;
+  color: white;
+}
+
+.hire-chef h2 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: #ff7b00;
+}
+
+.hire-chef-desc {
+  color: #ccc;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+/* === Flex layout for carousel + form === */
+.hire-chef-flex {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+/* === Chef Carousel Section === */
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: #ff7b00;
+  transition: color 0.3s ease;
+}
+
+.nav-btn:hover {
+  color: #ffaa33;
+}
+
+.chef-card {
+  background: #2a2a2a;
+  padding: 25px 15px;
+  width: 280px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 123, 0, 0.2);
+}
+
+.chef-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 18px rgba(255, 123, 0, 0.4);
+}
+
+.chef-img-container {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 20px;
+  border: 5px solid #ff7b00;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.chef-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hire-btn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background-color: #ff7b00;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.hire-btn:hover {
+  background-color: #e86c00;
+}
+
+/* === Modal === */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #262626;
+  padding: 35px 25px;
+  border-radius: 18px;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  color: white;
+  box-shadow: 0 0 20px rgba(255, 123, 0, 0.3);
+}
+
+.modal img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.modal .chef-bio {
+  margin-top: 10px;
+  font-style: italic;
+  color: #ccc;
+}
+
+/* === Join Chef Form === */
+.join-chef-form {
+  background-color: #1a1a1a;
+  padding: 40px 30px;
+  border-radius: 16px;
+  text-align: left;
+  color: white;
+  height: auto;
+  width: 820px;
+  box-shadow: 0 0 16px rgba(255, 123, 0, 0.2);
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.join-chef-form h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #ff7b00;
+}
+
+.join-chef-form p {
+  color: #ccc;
+  font-size: 0.95rem;
+  margin-bottom: 25px;
+}
+
+.join-chef-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* 2-column layout */
+.join-chef-form .form-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.join-chef-form input,
+.join-chef-form textarea {
+  background: #2b2b2b;
+  color: white;
+  border: 1px solid #444;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  width: 100%;
+}
+
+.join-chef-form textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* Thank you message */
+.join-chef-form .thank-you {
+  padding: 20px;
+  background-color: #2a2a2a;
+  border-radius: 12px;
+  color: #fff;
+  text-align: center;
+}
+
+/* === Terms + Submit Section OUTSIDE FORM === */
+.terms-submit {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.terms-checkbox {
+  font-size: 0.9rem;
+  color: #ccc;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Inside modal - form for user hiring details */
+.hire-chef-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.hire-chef-form input {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #333;
+  color: white;
+}
+
+.success-message {
+  margin-top: 15px;
+  padding: 12px;
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  animation: fadeIn 0.4s ease-in;
+}
+
+.terms-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-top: 10px;
+}
+
+.terms-wrapper input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #ff7b00; /* Modern browser support */
+  cursor: pointer;
+}
+
+.terms-wrapper label {
+  cursor: pointer;
+  user-select: none;
+}
+
+.terms-link {
+  color: #ff7b00;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.terms-link:hover {
+  color: #ffaa33;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Responsive === */
+@media (max-width: 900px) {
+  .hire-chef-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .join-chef-form,
+  .chef-card {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+  }
+
+  .carousel {
+    flex-direction: column;
+  }
+
+  .join-chef-form .form-group {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-btn {
+    font-size: 2rem;
+  }
+
+  .terms-submit {
+    align-items: flex-start;
+  }
+}

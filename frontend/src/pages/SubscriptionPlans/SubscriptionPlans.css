@@ -1,0 +1,213 @@
+.subscription-page {
+  padding: 60px 5%;
+  background-color: #0f0f0f;
+  color: white;
+  text-align: center;
+}
+
+.subscription-heading {
+  font-size: 36px;
+  color: #ff7b00;
+  margin-bottom: 20px;
+}
+
+.subscription-description {
+  font-size: 16px;
+  color: #ccc;
+  max-width: 800px;
+  margin: auto;
+  margin-bottom: 50px;
+  line-height: 1.7;
+}
+
+.subscription-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+.subscription-card {
+  background-color: #1f1f1f;
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 20px;
+  box-shadow: 0 6px 16px rgba(255, 123, 0, 0.25);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.subscription-card:hover {
+  transform: translateY(-5px);
+}
+
+.subscription-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.subscription-card h3 {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.rating {
+  font-size: 14px;
+  color: #ffdd57;
+  margin-bottom: 6px;
+}
+
+.price {
+  color: #ff7b00;
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.add-to-cart-btn {
+  padding: 10px 20px;
+  background-color: #ff7b00;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #e86c00;
+}
+
+.swap-skip-section {
+  margin-top: 60px;
+  background-color: #1a1a1a;
+  padding: 30px 20px;
+  border-radius: 12px;
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.swap-skip-section h2 {
+  color: #ff7b00;
+  margin-bottom: 10px;
+}
+
+.swap-skip-section p {
+  color: #ccc;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.swap-skip-section {
+  margin-top: 60px;
+  background: linear-gradient(135deg, #1a1a1a, #111);
+  padding: 40px 30px;
+  border-radius: 16px;
+  max-width: 900px;
+  margin-inline: auto;
+  box-shadow: 0 4px 18px rgba(255, 123, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.swap-skip-section h2 {
+  color: #ff7b00;
+  margin-bottom: 16px;
+  font-size: 24px;
+}
+
+.swap-skip-section p {
+  color: #ccc;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Skip Button */
+.skip-meal-btn {
+  background: linear-gradient(135deg, #ff7b00, #ff9900);
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.skip-meal-btn:hover {
+  background: linear-gradient(135deg, #e86c00, #ff7b00);
+  transform: scale(1.05);
+}
+
+/* Skip Form */
+.skip-form {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #2a2a2a;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 123, 0, 0.1);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.skip-form label {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  color: #ffcc80;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.skip-form input,
+.skip-form textarea {
+  margin-top: 8px;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+  background-color: #1f1f1f;
+  color: white;
+}
+
+.skip-form input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+/* Submit Button */
+.submit-skip-btn {
+  background: linear-gradient(135deg, #ff7b00, #ff9900);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 15px;
+  align-self: flex-start;
+  transition: all 0.3s ease;
+}
+
+.submit-skip-btn:hover {
+  background: linear-gradient(135deg, #e86c00, #ff7b00);
+  transform: translateY(-2px);
+}
+
+/* Optional: Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

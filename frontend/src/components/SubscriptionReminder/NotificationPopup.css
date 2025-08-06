@@ -1,0 +1,62 @@
+/* components/SubscriptionReminder/NotificationPopup.css */
+
+.notification-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.notification-popup {
+  background: white;
+  color: #333;
+  padding: 25px 30px;
+  border-radius: 10px;
+  text-align: center;
+  width: 90%;
+  max-width: 360px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.4s ease;
+}
+
+.notification-popup h3 {
+  margin-bottom: 15px;
+  color: #ff6f00;
+}
+
+.notification-popup p {
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+.notification-popup button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #ff6f00;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.notification-popup button:hover {
+  background-color: #e65100;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

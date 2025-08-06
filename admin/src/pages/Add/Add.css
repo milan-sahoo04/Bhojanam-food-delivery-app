@@ -1,0 +1,123 @@
+.add {
+  width: 70%;
+  margin-left: max(5vw, 25px);
+  margin-top: 50px;
+  color: #333;
+  font-size: 16px;
+  background-color: #fff8f0;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.add form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.add-img-upload p,
+.add-product-name p,
+.add-product-description p,
+.add-category p,
+.add-price p {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.add-img-upload img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border: 2px dashed #ffa94d;
+  padding: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.add-img-upload img:hover {
+  transform: scale(1.05);
+}
+
+.add-product-name,
+.add-product-description {
+  width: 100%;
+  max-width: 500px;
+}
+
+.add-product-name input,
+.add-product-description textarea,
+.add-category select,
+.add-price input {
+  width: 100%;
+  padding: 12px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  background-color: #fff;
+  font-size: 15px;
+}
+
+.add-product-name input:focus,
+.add-product-description textarea:focus,
+.add-category select:focus,
+.add-price input:focus {
+  border-color: #ff7b00;
+}
+
+.add-product-description textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.add-category-price {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.add-category,
+.add-price {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-width: 220px;
+}
+
+.add-btn {
+  width: fit-content;
+  padding: 12px 24px;
+  border: none;
+  background-color: #ff7b00;
+  color: white;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-btn:hover {
+  background-color: #e56700;
+}
+
+@media (max-width: 768px) {
+  .add {
+    width: 90%;
+    margin: 30px auto;
+    padding: 20px;
+  }
+
+  .add-category-price {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .add-category,
+  .add-price {
+    max-width: 100%;
+  }
+}

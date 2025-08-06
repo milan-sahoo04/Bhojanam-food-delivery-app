@@ -1,0 +1,99 @@
+.explore-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background-color: #111;
+  padding: 50px 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.05);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.explore-menu h1 {
+  color: #ff7b00;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.explore-menu-text {
+  max-width: 60%;
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.explore-menu-list {
+  display: flex;
+  overflow-x: auto;
+  gap: 28px;
+  padding: 15px 0;
+  scroll-behavior: smooth;
+}
+
+.explore-menu-list::-webkit-scrollbar {
+  display: none;
+}
+
+.explore-menu-list-item {
+  text-align: center;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.explore-menu-list-item:hover {
+  transform: scale(1.07);
+}
+
+.explore-menu-list-item img {
+  width: 7vw;
+  min-width: 80px;
+  height: 7vw;
+  min-height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.explore-menu-list-item img.active {
+  border: 3px solid #ff7b00;
+  box-shadow: 0 0 12px rgba(255, 123, 0, 0.6);
+}
+
+.menu-name {
+  margin-top: 12px;
+  font-size: 1rem;
+  color: #eee;
+  transition: color 0.3s;
+  font-weight: 500;
+}
+
+.menu-name:hover {
+  color: #ff7b00;
+}
+
+.menu-name.active-name {
+  color: #ff7b00;
+  font-weight: 600;
+}
+
+.explore-menu hr {
+  margin-top: 30px;
+  height: 2px;
+  background-color: #333;
+  border: none;
+  width: 100%;
+}
+
+@media (max-width: 1050px) {
+  .explore-menu-text {
+    max-width: 100%;
+    font-size: 0.95rem;
+  }
+
+  .menu-name {
+    font-size: 0.9rem;
+  }
+}

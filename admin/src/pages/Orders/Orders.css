@@ -1,0 +1,94 @@
+.order {
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.order h3 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.order-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.order-item {
+  display: grid;
+  grid-template-columns: 60px 2fr 1fr 1fr 1fr;
+  gap: 20px;
+  align-items: flex-start;
+  background-color: #fffdf7;
+  border: 1px solid #ffd3c2;
+  border-left: 6px solid #ff8b3e;
+  border-radius: 10px;
+  padding: 20px;
+  transition: box-shadow 0.3s ease;
+}
+
+.order-item:hover {
+  box-shadow: 0 4px 12px rgba(255, 140, 0, 0.15);
+}
+
+.order-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.order-item-food {
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.order-item-name {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.order-item-address p,
+.order-item-phone {
+  font-size: 14px;
+  color: #555;
+}
+
+.order-item select {
+  background-color: #fff8f0;
+  border: 1px solid #ffa366;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.order-item select:hover,
+.order-item select:focus {
+  border-color: #ff8b3e;
+  box-shadow: 0 0 4px rgba(255, 140, 0, 0.2);
+  outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1000px) {
+  .order-item {
+    font-size: 13px;
+    grid-template-columns: 1fr 2fr 1fr;
+    padding: 15px 12px;
+  }
+
+  .order-item select {
+    padding: 6px 8px;
+    font-size: 13px;
+  }
+
+  .order-item img {
+    width: 40px;
+    height: 40px;
+  }
+}

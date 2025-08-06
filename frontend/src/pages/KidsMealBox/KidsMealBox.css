@@ -1,0 +1,78 @@
+.kids-meal-page {
+  background-color: #0f0f0f; /* black background */
+  padding: 50px 20px;
+  min-height: 100vh;
+  text-align: center;
+  color: #f2f2f2; /* light text for contrast */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.kids-meal-page h1 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: #ff9800; /* orange tone to match kids' theme */
+}
+
+.kids-meal-desc {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  max-width: 700px;
+  line-height: 1.6;
+  color: #dddddd;
+}
+
+.kids-meal-list {
+  list-style: none;
+  padding: 0;
+  font-size: 1rem;
+  margin-bottom: 40px;
+  max-width: 600px;
+  text-align: left;
+  color: #e0e0e0;
+}
+
+.kids-meal-list li {
+  margin-bottom: 12px;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.kids-meal-btn {
+  background-color: #ff9800;
+  color: #000;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.kids-meal-btn:hover {
+  background-color: #ffa726;
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .kids-meal-page h1 {
+    font-size: 2rem;
+  }
+
+  .kids-meal-desc {
+    font-size: 1rem;
+  }
+
+  .kids-meal-list {
+    font-size: 0.95rem;
+  }
+
+  .kids-meal-btn {
+    padding: 10px 24px;
+    font-size: 0.95rem;
+  }
+}

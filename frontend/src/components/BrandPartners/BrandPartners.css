@@ -1,0 +1,53 @@
+.brand-partners {
+  background-color: black;
+  padding: 60px 20px;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.brand-partners h2 {
+  font-size: 3.2rem;
+  color: #ff9800;
+  margin-bottom: 15px;
+}
+
+.brand-subtext {
+  max-width: 600px;
+  margin: 0 auto 30px;
+  color: #ccc;
+  font-size: 1rem;
+}
+
+.brand-logos-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.brand-logos {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  animation: slide-scroll 25s linear infinite;
+}
+
+.brand-logos img {
+  height: 100px; /* ✅ Slightly increased size */
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.brand-logos img:hover {
+  transform: scale(1.1);
+}
+
+/* ✅ Keyframe for one-after-another animation effect */
+@keyframes slide-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

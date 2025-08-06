@@ -1,0 +1,145 @@
+/* --- Video Blur Styling --- */
+.header-video.blurred {
+  filter: blur(5px);
+  transition: filter 0.3s ease;
+}
+
+/* --- Header Layout --- */
+.header {
+  position: relative;
+  height: 100vh; /* Increased height for full screen */
+  width: 100vw; /* Ensures full width */
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.header-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  object-fit: cover;
+  z-index: -1;
+  transition: filter 0.3s ease;
+}
+
+/* --- Header Content --- */
+.header-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1.5vw;
+  max-width: 50%;
+  bottom: 10%;
+  left: 6vw;
+  animation: fadeIn 3s;
+  color: white;
+}
+
+.header-content h2 {
+  font-weight: 500;
+  font-size: max(4.5vw, 22px);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.delivers-text-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.delivers-text {
+  color: #ffffff;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* --- Rotating Text Beside Delivers --- */
+.rotating-text-wrapper.inline {
+  height: 2em;
+  overflow: hidden;
+  font-size: max(1.3vw, 14px);
+  font-weight: 600;
+  color: #ff820f;
+  line-height: 1.5em;
+  display: inline-block;
+}
+
+.rotating-text-slider {
+  display: flex;
+  flex-direction: column;
+  animation: scrollText 35s linear infinite;
+}
+
+.rotating-text-slider > div {
+  height: 2em;
+  white-space: nowrap;
+}
+
+/* Animation */
+@keyframes scrollText {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+/* --- Button & Paragraph --- */
+.header-content p {
+  font-size: 1vw;
+}
+
+.header-content button {
+  border: none;
+  color: #747474;
+  font-weight: 500;
+  padding: 1vw 2.3vw;
+  background-color: white;
+  font-size: max(1vw, 13px);
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1050px) {
+  .header-content {
+    max-width: 60%;
+  }
+
+  .header-content h2 {
+    font-size: 6vw;
+  }
+
+  .header-content p {
+    font-size: 1.5vw;
+  }
+}
+
+@media (max-width: 750px) {
+  .header {
+    height: 100vh;
+  }
+
+  .header-video {
+    height: 100vh;
+  }
+
+  .header-content {
+    max-width: 75%;
+  }
+
+  .header-content p {
+    display: none;
+  }
+
+  .header-content button {
+    padding: 2vw 4vw;
+  }
+}
