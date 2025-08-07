@@ -7,7 +7,8 @@ import AppDownload from "../../components/AppDownload/AppDownload";
 import HireChef from "../../components/HireChef/HireChef";
 import BrandPartners from "../../components/BrandPartners/BrandPartners";
 import ContactForm from "../../components/ContactForm/ContactForm";
-
+import FoodDiary from "../../components/FoodDiary/FoodDiary";
+import MoodMeal from "../../components/MoodMeal/MoodMeal";
 const Home = () => {
   const [category, setCategory] = useState("All");
 
@@ -17,6 +18,8 @@ const Home = () => {
       <ExploreMenu category={category} setCategory={setCategory} />
       <FoodDisplay category={category} /> {/* ✅ searchTerm handled inside */}
       <HireChef />
+      <MoodMeal />
+      <FoodDiary />
       <AppDownload />
       <BrandPartners />
       <ContactForm />
