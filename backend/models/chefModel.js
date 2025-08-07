@@ -7,8 +7,8 @@ const chefSchema = new mongoose.Schema({
   phone: { type: String, required: true },
   experience: { type: String, required: true },
   specialty: { type: String, required: true },
-  image: { type: String }, // image is optional
+  // image: { type: String }, // image is optional
 });
 
-const Chef = mongoose.model("Chef", chefSchema);
-export default Chef;
+const chefModel = mongoose.models.chef || mongoose.model("Chef", chefSchema);
+export default chefModel;
