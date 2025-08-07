@@ -5,12 +5,18 @@ import { Link, useNavigate } from "react-router-dom";
 import { StoreContext } from "../../context/StoreContext";
 import NotificationPopup from "../SubscriptionReminder/NotificationPopup";
 
+// ✅ i18next translation hook
+import { useTranslation } from "react-i18next";
+
 const Navbar = ({ setShowLogin }) => {
   const [menu, setMenu] = useState("home");
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [showNotify, setShowNotify] = useState(false);
   const { getTotalCartAmount, token, setToken } = useContext(StoreContext);
   const navigate = useNavigate();
+
+  // ✅ useTranslation hook
+  const { t, i18n } = useTranslation();
 
   const logout = () => {
     localStorage.removeItem("token");
@@ -20,6 +26,11 @@ const Navbar = ({ setShowLogin }) => {
 
   const toggleMenu = () => setShowMobileMenu(!showMobileMenu);
   const closeMenu = () => setShowMobileMenu(false);
+
+  // ✅ language change
+  const changeLanguage = (e) => {
+    i18n.changeLanguage(e.target.value);
+  };
 
   return (
     <div className="navbar">
@@ -45,7 +56,7 @@ const Navbar = ({ setShowLogin }) => {
             closeMenu();
           }}
         >
-          Home
+          {t("home")}
         </Link>
         <a
           href="#explore-menu"
@@ -55,7 +66,7 @@ const Navbar = ({ setShowLogin }) => {
             closeMenu();
           }}
         >
-          Menu
+          {t("menu")}
         </a>
         <a
           href="#app-download"
@@ -65,7 +76,7 @@ const Navbar = ({ setShowLogin }) => {
             closeMenu();
           }}
         >
-          Mobile App
+          {t("mobile_app")}
         </a>
         <Link
           to="/about"
@@ -75,7 +86,7 @@ const Navbar = ({ setShowLogin }) => {
             closeMenu();
           }}
         >
-          About
+          {t("about")}
         </Link>
         <Link
           to="/diet-plan"
@@ -85,7 +96,7 @@ const Navbar = ({ setShowLogin }) => {
             closeMenu();
           }}
         >
-          Diet Plan
+          {t("diet_plan")}
         </Link>
         <Link
           to="/kids-meal"
@@ -95,7 +106,7 @@ const Navbar = ({ setShowLogin }) => {
             closeMenu();
           }}
         >
-          Kids Meal
+          {t("kids_meal")}
         </Link>
         <Link
           to="/subscriptions"
@@ -105,7 +116,7 @@ const Navbar = ({ setShowLogin }) => {
             closeMenu();
           }}
         >
-          Subscription
+          {t("subscription")}
         </Link>
         <Link
           to="/blog"
@@ -115,7 +126,7 @@ const Navbar = ({ setShowLogin }) => {
             closeMenu();
           }}
         >
-          Blog
+          {t("blog")}
         </Link>
         <a
           href="#footer"
@@ -125,7 +136,7 @@ const Navbar = ({ setShowLogin }) => {
             closeMenu();
           }}
         >
-          Contact Us
+          {t("contact_us")}
         </a>
       </ul>
 
@@ -145,20 +156,30 @@ const Navbar = ({ setShowLogin }) => {
           <img src={assets.notify_icon} alt="Notify" />
         </div>
 
+        {/* ✅ Language Selector */}
+        <select onChange={changeLanguage} className="lang-switcher">
+          <option value="en">English</option>
+          <option value="hi">हिन्दी</option>
+          <option value="or">ଓଡ଼ିଆ</option>
+          <option value="bn">বাংলা</option>
+          <option value="te">తెలుగు</option>
+          <option value="ta">தமிழ்</option>
+        </select>
+
         {!token ? (
-          <button onClick={() => setShowLogin(true)}>Sign In</button>
+          <button onClick={() => setShowLogin(true)}>{t("sign_in")}</button>
         ) : (
           <div className="navbar-profile">
             <img src={assets.profile_icon} alt="Profile" />
             <ul className="nav-profile-dropdown">
               <li onClick={() => navigate("/myorders")}>
                 <img src={assets.bag_icon} alt="Orders" />
-                Orders
+                {t("orders")}
               </li>
               <hr />
               <li onClick={logout}>
                 <img src={assets.logout_icon} alt="Logout" />
-                Logout
+                {t("logout")}
               </li>
             </ul>
           </div>

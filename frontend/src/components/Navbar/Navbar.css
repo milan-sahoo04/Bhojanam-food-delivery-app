@@ -1,3 +1,4 @@
+/* ===== NAVBAR CONTAINER ===== */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -9,6 +10,7 @@
   color: white;
 }
 
+/* ===== LOGO ===== */
 .logo {
   width: 140px;
   height: auto;
@@ -39,11 +41,11 @@
   padding-bottom: 2px;
 }
 
-/* ===== RIGHT SECTION ===== */
+/* ===== RIGHT SECTION (Search, Cart, Lang, Button) ===== */
 .navbar-right {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
 }
 
 .navbar-right img {
@@ -71,7 +73,25 @@
   border-radius: 50%;
 }
 
-/* ===== BUTTON ===== */
+/* ===== LANGUAGE DROPDOWN ===== */
+.lang-switcher {
+  background-color: transparent;
+  color: white;
+  border: 1px solid #ff7b00;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.lang-switcher:hover {
+  background-color: #fff4f2;
+  color: black;
+}
+
+/* ===== SIGN IN BUTTON ===== */
 .navbar button {
   background: transparent;
   border: 1px solid #ff7b00;
@@ -79,8 +99,11 @@
   padding: 8px 20px;
   border-radius: 30px;
   font-size: 15px;
+  font-weight: 500;
   cursor: pointer;
   transition: 0.3s;
+  white-space: nowrap;
+  line-height: 1.2;
 }
 
 .navbar button:hover {
@@ -185,10 +208,14 @@
   }
 
   .navbar-right {
-    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 10px;
   }
 
-  .navbar-right button {
+  .navbar-right button,
+  .lang-switcher {
     font-size: 14px;
     padding: 6px 16px;
   }
