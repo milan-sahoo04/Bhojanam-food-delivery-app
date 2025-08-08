@@ -4,7 +4,7 @@ import Stripe from "stripe";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
-//placing user order from frontend
+// placing user order from frontend
 const placeOrder = async (req, res) => {
   const frontend_url = "http://localhost:5173";
 
@@ -20,30 +20,35 @@ const placeOrder = async (req, res) => {
 
     const line_items = req.body.items.map((item) => ({
       price_data: {
-        currency: "inr",
+        currency: "inr", // Changed to INR
         product_data: {
           name: item.name,
         },
-        unit_amount: item.price * 100 * 80,
+        // Price in paise (₹) — multiplied by 100 for paise
+        unit_amount: item.price * 100,
       },
       quantity: item.quantity,
     }));
+
+    // Delivery charges in ₹ (example: ₹50)
     line_items.push({
       price_data: {
         currency: "inr",
         product_data: {
           name: "Delivery Charges",
         },
-        unit_amount: 2 * 100 * 80,
+        unit_amount: 50 * 100, // ₹50 converted to paise
       },
       quantity: 1,
     });
+
     const session = await stripe.checkout.sessions.create({
       line_items: line_items,
       mode: "payment",
       success_url: `${frontend_url}/verify?success=true&orderId=${newOrder._id}`,
       cancel_url: `${frontend_url}/verify?success=false&orderId=${newOrder._id}`,
     });
+
     res.json({ success: true, session_url: session.url });
   } catch (error) {
     console.log(error);
@@ -78,7 +83,7 @@ const userOrders = async (req, res) => {
   }
 };
 
-// Listing orders for admin pannel
+// listing orders for admin panel
 const listOrders = async (req, res) => {
   try {
     const orders = await orderModel.find({});
@@ -89,13 +94,13 @@ const listOrders = async (req, res) => {
   }
 };
 
-// api for updating order status
+// API for updating order status
 const updateStatus = async (req, res) => {
   try {
     await orderModel.findByIdAndUpdate(req.body.orderId, {
       status: req.body.status,
     });
-    res.json({ success: true, message: "Satus Updated" });
+    res.json({ success: true, message: "Status Updated" });
   } catch (error) {
     console.log(error);
     res.json({ success: false, message: "Error" });
