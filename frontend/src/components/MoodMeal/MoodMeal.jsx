@@ -1,6 +1,16 @@
 import React, { useState } from "react";
 import "./MoodMeal.css";
 
+// Import images from assets
+import biryaniImg from "../../assets/biryani.png";
+import paneerImg from "../../assets/paneer.png";
+import khichdiImg from "../../assets/khichdi.png";
+import daalImg from "../../assets/daal.png";
+import icecreamImg from "../../assets/icecream.png";
+import lassiImg from "../../assets/lassi.png";
+import pastaImg from "../../assets/pasta.png";
+import pizzaImg from "../../assets/pizza.png";
+
 const moodOptions = [
   { emoji: "😊", mood: "Happy" },
   { emoji: "😞", mood: "Sad" },
@@ -10,20 +20,20 @@ const moodOptions = [
 
 const moodMealMap = {
   Happy: [
-    { name: "Biryani", image: "/images/biryani.jpg" },
-    { name: "Paneer Butter Masala", image: "/images/paneer.jpg" },
+    { name: "Biryani", image: biryaniImg },
+    { name: "Paneer Butter Masala", image: paneerImg },
   ],
   Sad: [
-    { name: "Khichdi", image: "/images/khichdi.jpg" },
-    { name: "Daal Chawal", image: "/images/daal.jpg" },
+    { name: "Khichdi", image: khichdiImg },
+    { name: "Daal Chawal", image: daalImg },
   ],
   Angry: [
-    { name: "Ice Cream", image: "/images/icecream.jpg" },
-    { name: "Lassi", image: "/images/lassi.jpg" },
+    { name: "Ice Cream", image: icecreamImg },
+    { name: "Lassi", image: lassiImg },
   ],
   "In Love": [
-    { name: "Pasta", image: "/images/pasta.jpg" },
-    { name: "Pizza", image: "/images/pizza.jpg" },
+    { name: "Pasta", image: pastaImg },
+    { name: "Pizza", image: pizzaImg },
   ],
 };
 
@@ -33,6 +43,8 @@ const MoodMeal = () => {
   return (
     <div className="mood-meal">
       <h2>What's Your Mood Today? 🧠</h2>
+
+      {/* Mood Selection */}
       <div className="mood-options">
         {moodOptions.map((mood) => (
           <button
@@ -45,6 +57,7 @@ const MoodMeal = () => {
         ))}
       </div>
 
+      {/* Meal Suggestions */}
       {selectedMood && (
         <div className="meal-suggestions">
           <h3>Meal Suggestions for "{selectedMood}" Mood</h3>

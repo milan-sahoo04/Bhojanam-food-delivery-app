@@ -1,3 +1,4 @@
+/* 🌟 Main Container */
 .mood-meal {
   padding: 60px 20px;
   background: linear-gradient(135deg, #fff8e1 0%, #ffe0b2 100%);
@@ -6,6 +7,7 @@
   border-radius: 20px;
   box-shadow: 0 4px 20px rgba(255, 165, 0, 0.1);
   margin: 30px 10px;
+  animation: fadeIn 0.8s ease-in-out;
 }
 
 .mood-meal h2 {
@@ -20,6 +22,7 @@
   margin-bottom: 30px;
 }
 
+/* 🎭 Mood Selection Buttons */
 .mood-options {
   display: flex;
   justify-content: center;
@@ -37,11 +40,14 @@
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
 }
 
 .mood-options button:hover {
   background-color: #ffecb3;
-  transform: scale(1.05);
+  transform: scale(1.07);
+  box-shadow: 0 0 15px rgba(255, 207, 51, 0.5);
 }
 
 .mood-options button.active {
@@ -49,11 +55,13 @@
   color: #000;
   font-weight: 600;
   border-color: #ffc107;
-  box-shadow: 0 4px 12px rgba(255, 207, 51, 0.4);
+  box-shadow: 0 4px 15px rgba(255, 207, 51, 0.6);
 }
 
+/* 🍽️ Meal Suggestions Section */
 .meal-suggestions {
   margin-top: 50px;
+  animation: fadeUp 0.6s ease-in-out;
 }
 
 .meal-suggestions h3 {
@@ -61,6 +69,7 @@
   color: #444;
 }
 
+/* 🃏 Meal Cards Layout */
 .meal-cards {
   display: flex;
   flex-wrap: wrap;
@@ -75,11 +84,14 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   padding: 16px;
   width: 230px;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: fadeUp 0.6s ease-in-out;
+  overflow: hidden;
 }
 
 .meal-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(255, 165, 0, 0.3);
 }
 
 .meal-card img {
@@ -87,6 +99,11 @@
   height: 150px;
   object-fit: cover;
   border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+
+.meal-card:hover img {
+  transform: scale(1.08);
 }
 
 .meal-card h4 {
@@ -104,14 +121,36 @@
   border-radius: 10px;
   cursor: pointer;
   font-weight: 500;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.meal-card button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+}
+
+.meal-card button:hover::after {
+  width: 200%;
+  height: 200%;
 }
 
 .meal-card button:hover {
   background-color: #e65500;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(255, 102, 0, 0.5);
 }
 
-/* 🌐 Responsive Design */
+/* 📱 Responsive Design */
 @media (max-width: 768px) {
   .mood-meal h2 {
     font-size: 28px;
@@ -128,12 +167,33 @@
 }
 
 @media (max-width: 480px) {
-  .meal-options {
+  .mood-options {
     flex-direction: column;
     align-items: center;
   }
 
   .meal-card img {
     height: 120px;
+  }
+}
+
+/* ✨ Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
