@@ -19,3 +19,11 @@
   gap: 30px;
   row-gap: 50px;
 }
+
+.search-sort-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 600px;
+  margin: 20px auto 30px;
+}

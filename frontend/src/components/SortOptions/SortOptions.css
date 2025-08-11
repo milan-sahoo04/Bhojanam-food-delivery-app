@@ -1,0 +1,51 @@
+/* Container for sort dropdown */
+.sort-container {
+  width: 26%; /* narrower */
+  max-width: 250px;
+  margin: 30px 0 20px 10px; /* left margin to separate from search */
+  font-family: "Poppins", sans-serif;
+}
+
+/* Sort dropdown styling */
+.sort-select {
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 40px;
+  border: 1.5px solid #ccc;
+  font-size: 1rem;
+  background-color: #fffdfa;
+  color: #333;
+  cursor: pointer;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.07);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-weight: 600;
+  appearance: none;
+
+  /* Custom arrow icon */
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23ff8a00' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px 16px;
+  padding-right: 48px; /* space for arrow */
+  letter-spacing: 0.02em;
+}
+
+.sort-select:hover,
+.sort-select:focus {
+  border-color: #ff8a00;
+  box-shadow: 0 0 14px #ff8a00;
+  outline: none;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .sort-container {
+    width: 100%;
+    max-width: 90vw;
+    margin: 15px auto;
+  }
+
+  .sort-select {
+    padding-right: 40px;
+  }
+}

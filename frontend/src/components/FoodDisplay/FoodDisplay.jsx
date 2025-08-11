@@ -2,29 +2,38 @@ import React, { useContext, useState } from "react";
 import "./FoodDisplay.css";
 import { StoreContext } from "../../context/StoreContext";
 import FoodItem from "../FoodItem/FoodItem";
-import SearchBar from "../SearchBar/SearchBar"; // ✅ Add this import
+import SearchBar from "../SearchBar/SearchBar";
+import SortOptions from "../SortOptions/SortOptions"; // <-- Import SortOptions
 
 const FoodDisplay = ({ category }) => {
   const { food_list } = useContext(StoreContext);
 
-  // ✅ Local state for search term
   const [searchTerm, setSearchTerm] = useState("");
+  const [sortBy, setSortBy] = useState("none");
 
-  // ✅ Filtering by category + search
-  const filteredFoodList = food_list.filter((item) => {
+  let filteredFoodList = food_list.filter((item) => {
     const matchesCategory = category === "All" || item.category === category;
-    const matchesSearch =
-      item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      item.description.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesSearch = item.name
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
     return matchesCategory && matchesSearch;
   });
+
+  if (sortBy === "priceLowToHigh") {
+    filteredFoodList = filteredFoodList.sort((a, b) => a.price - b.price);
+  } else if (sortBy === "priceHighToLow") {
+    filteredFoodList = filteredFoodList.sort((a, b) => b.price - a.price);
+  }
 
   return (
     <div className="food-display" id="food-display">
       <h2>Freshly Cooked Favorites Just for You</h2>
 
-      {/* ✅ Search bar placed below heading */}
-      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      {/* Container to hold SearchBar + SortOptions side by side */}
+      <div className="search-sort-container">
+        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+        <SortOptions sortBy={sortBy} setSortBy={setSortBy} />
+      </div>
 
       <div className="food-display-list">
         {filteredFoodList.length > 0 ? (
