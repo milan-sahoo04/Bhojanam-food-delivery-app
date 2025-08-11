@@ -42,12 +42,12 @@ const Add = ({ url }) => {
     }
   };
 
-  // useEffect(()=>{
-  //       console.log(data)
-  // },[data])
-
   return (
     <div className="add">
+      <h2 className="form-title">🍽 Add New Dish</h2>
+      <p className="form-subtitle">
+        Fill in the details below to add a new food item to the menu.
+      </p>
       <form className="flex-col" onSubmit={onSubmitHandler}>
         <div className="add-img-upload flex-col">
           <p>Upload Image</p>
@@ -72,7 +72,8 @@ const Add = ({ url }) => {
             value={data.name}
             type="text"
             name="name"
-            placeholder="Type Here"
+            placeholder="Enter product name"
+            required
           />
         </div>
         <div className="add-product-description flex-col">
@@ -82,37 +83,42 @@ const Add = ({ url }) => {
             value={data.description}
             name="description"
             rows="6"
-            placeholder="Write Content Here"
+            placeholder="Write the description here..."
             required
           ></textarea>
         </div>
         <div className="add-category-price">
           <div className="add-category flex-col">
-            <p>Product category</p>
+            <p>Product Category</p>
             <select onChange={onChangeHandler} name="category">
               <option value="Salad">Salad</option>
-              <option value="Rools">Rools</option>
+              <option value="Rolls">Rolls</option>
               <option value="Deserts">Deserts</option>
               <option value="Sandwich">Sandwich</option>
               <option value="Cake">Cake</option>
               <option value="Pure Veg">Pure Veg</option>
               <option value="Pasta">Pasta</option>
               <option value="Noodles">Noodles</option>
+              <option value="Veg Curry">Veg Curry</option>
+              <option value="Thali">Thali</option>
+              <option value="Rice">Rice</option>
+              <option value="Puri">Puri</option>
             </select>
           </div>
           <div className="add-price flex-col">
-            <p>Product price</p>
+            <p>Product Price</p>
             <input
               onChange={onChangeHandler}
               value={data.price}
               type="number"
               name="price"
-              placeholder="$20"
+              placeholder="₹20"
+              required
             />
           </div>
         </div>
         <button type="submit" className="add-btn">
-          ADD
+          ➕ Add Product
         </button>
       </form>
     </div>

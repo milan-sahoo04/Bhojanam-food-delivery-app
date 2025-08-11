@@ -1,10 +1,14 @@
 .sidebar {
   width: 18%;
   min-height: 100vh;
-  background-color: #fff8f0; /* Warm food background */
+  background: linear-gradient(180deg, #fff8f0, #ffeedd);
   font-size: max(1vw, 10px);
-  border-right: 2px solid #ffdab9; /* Light peachy border */
-  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+  border-right: 2px solid #ffdab9;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: width 0.3s ease;
 }
 
 .sidebar-options {
@@ -12,55 +16,74 @@
   padding-left: 20%;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
+  width: 100%;
 }
 
 .sidebar-option {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 10px 12px;
+  gap: 14px;
+  padding: 10px 14px;
   border-radius: 8px;
   text-decoration: none;
   color: #333;
   background-color: transparent;
-  transition: background-color 0.3s, transform 0.3s;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.sidebar-option img {
+  width: 22px;
+  height: 22px;
+  filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.1));
+  transition: transform 0.3s ease;
+}
+
+.sidebar-option p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .sidebar-option:hover {
   background-color: #ffe0c4;
-  transform: translateX(4px);
+  transform: translateX(5px);
+  box-shadow: 0 2px 6px rgba(255, 138, 0, 0.2);
+}
+
+.sidebar-option:hover img {
+  transform: scale(1.1);
 }
 
 .sidebar-option.active {
   background-color: #ffcc99;
   color: #000;
   font-weight: 600;
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 8px rgba(255, 138, 0, 0.25);
+  border-left: 4px solid #ff8b3e;
+  transform: translateX(3px);
 }
 
-.sidebar-option img {
-  width: 20px;
-  height: 20px;
-}
-
-.sidebar-option p {
-  margin: 0;
-  font-size: 14px;
-}
-
+/* Responsive Design */
 @media (max-width: 900px) {
-  .sidebar-option p {
-    display: none;
-  }
-
   .sidebar {
     width: 70px;
+    align-items: center;
+  }
+
+  .sidebar-options {
     padding-left: 0;
+    align-items: center;
   }
 
   .sidebar-option {
     justify-content: center;
+    gap: 0;
     padding: 12px;
+  }
+
+  .sidebar-option p {
+    display: none;
   }
 }

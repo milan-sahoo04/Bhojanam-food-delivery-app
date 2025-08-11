@@ -1,11 +1,13 @@
 .order {
   padding: 20px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0d0d0d; /* Dark background */
+  min-height: 100vh;
 }
 
 .order h3 {
   font-size: 24px;
-  color: #333;
+  color: #ff6600; /* Orange title */
   margin-bottom: 20px;
 }
 
@@ -20,16 +22,18 @@
   grid-template-columns: 60px 2fr 1fr 1fr 1fr;
   gap: 20px;
   align-items: flex-start;
-  background-color: #fffdf7;
-  border: 1px solid #ffd3c2;
-  border-left: 6px solid #ff8b3e;
+  background-color: #141414; /* Dark card */
+  border: 1px solid #333;
+  border-left: 6px solid #ff6600; /* Orange accent */
   border-radius: 10px;
   padding: 20px;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  color: white;
 }
 
 .order-item:hover {
-  box-shadow: 0 4px 12px rgba(255, 140, 0, 0.15);
+  background-color: #1f1f1f;
+  box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3);
 }
 
 .order-item img {
@@ -41,36 +45,40 @@
 .order-item-food {
   font-weight: 500;
   margin-bottom: 10px;
-  color: #444;
+  color: #ffcc99; /* Soft orange text */
 }
 
 .order-item-name {
   font-weight: 600;
   margin-bottom: 5px;
-  color: #333;
+  color: #ffffff;
 }
 
-.order-item-address p,
+.order-item-address p {
+  font-size: 14px;
+  color: #cccccc;
+}
+
 .order-item-phone {
   font-size: 14px;
-  color: #555;
+  color: #ffb366; /* Highlighted phone number */
 }
 
 .order-item select {
-  background-color: #fff8f0;
-  border: 1px solid #ffa366;
+  background-color: #0d0d0d;
+  border: 1px solid #ff6600;
   border-radius: 6px;
   padding: 8px 10px;
   font-size: 14px;
-  color: #333;
+  color: white;
   cursor: pointer;
   transition: border 0.3s, box-shadow 0.3s;
 }
 
 .order-item select:hover,
 .order-item select:focus {
-  border-color: #ff8b3e;
-  box-shadow: 0 0 4px rgba(255, 140, 0, 0.2);
+  border-color: #ff944d;
+  box-shadow: 0 0 4px rgba(255, 102, 0, 0.5);
   outline: none;
 }
 

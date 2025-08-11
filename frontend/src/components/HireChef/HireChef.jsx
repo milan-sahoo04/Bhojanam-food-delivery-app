@@ -4,6 +4,7 @@ import chef1 from "../../assets/chef1.png";
 import chef2 from "../../assets/chef2.png";
 import chef3 from "../../assets/chef3.png";
 import chef4 from "../../assets/chef4.png";
+import axios from "axios"; // ✅ Added axios for API call
 
 const chefs = [
   {
@@ -81,24 +82,42 @@ const HireChef = () => {
     }));
   };
 
-  const handleJoinSubmit = (e) => {
+  const handleJoinSubmit = async (e) => {
     e.preventDefault();
-    if (formData.accepted) {
-      console.log("New Chef Submitted:", formData);
-      setSubmitted(true);
-    } else {
+    if (!formData.accepted) {
       alert("Please accept the terms and conditions.");
+      return;
+    }
+
+    try {
+      const res = await axios.post("http://localhost:4000/api/chef/create", {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        experience: formData.experience,
+        specialty: formData.specialty,
+        location: formData.location,
+        bio: formData.bio,
+      });
+
+      if (res.data.success) {
+        console.log("✅ New Chef Submitted:", res.data.chef);
+        setSubmitted(true);
+      }
+    } catch (error) {
+      console.error("❌ Error submitting chef:", error);
+      alert("Something went wrong while submitting. Please try again.");
     }
   };
 
   const handleHireSubmit = (e) => {
     e.preventDefault();
     console.log("Chef Hired By:", hireData);
-    setHireSuccess(true); // ✅ Show success message
+    setHireSuccess(true);
 
     setTimeout(() => {
-      setHireSuccess(false); // ✅ Hide after 3 seconds
-      setSelectedChef(null); // ✅ Close modal
+      setHireSuccess(false);
+      setSelectedChef(null);
     }, 3000);
 
     setHireData({ userName: "", userEmail: "", userPhone: "" });
@@ -235,7 +254,6 @@ const HireChef = () => {
         </div>
       </div>
 
-      {/* Modal for Hiring */}
       {selectedChef && (
         <div className="modal-overlay" onClick={() => setSelectedChef(null)}>
           <div className="modal" onClick={(e) => e.stopPropagation()}>
@@ -291,7 +309,6 @@ const HireChef = () => {
               </button>
             </form>
 
-            {/* ✅ Success Message Display */}
             {hireSuccess && (
               <div className="success-message">🎉 Chef hired successfully!</div>
             )}

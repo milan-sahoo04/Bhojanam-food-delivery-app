@@ -10,6 +10,10 @@ import menu_5 from "./menu_5.png";
 import menu_6 from "./menu_6.png";
 import menu_7 from "./menu_7.png";
 import menu_8 from "./menu_8.png";
+import menu_9 from "./pureveg4.png";
+import menu_10 from "./thali1.png";
+import menu_11 from "./rice1.png";
+import menu_12 from "./puri1.png";
 
 import food_1 from "./food_1.png";
 import food_2 from "./food_2.png";
@@ -43,6 +47,33 @@ import food_29 from "./food_29.png";
 import food_30 from "./food_30.png";
 import food_31 from "./food_31.png";
 import food_32 from "./food_32.png";
+import desert_1 from "./desert1.png";
+import desert_2 from "./desert2.png";
+
+import pureveg_1 from "./pureveg1.png";
+import pureveg_2 from "./pureveg2.png";
+import pureveg_3 from "./pureveg3.png";
+import pureveg_4 from "./pureveg4.png";
+
+import thali_8 from "./thali.png";
+import thali_1 from "./thali1.png";
+import thali_2 from "./thali2.png";
+import thali_3 from "./thali3.png";
+import thali_4 from "./thali4.png";
+import thali_5 from "./thali5.png";
+import thali_6 from "./thali6.png";
+import thali_7 from "./thali7.png";
+
+import rice_1 from "./rice1.png";
+import rice_2 from "./rice2.png";
+import rice_3 from "./rice3.png";
+import rice_4 from "./rice4.png";
+import rice_5 from "./rice5.png";
+import rice_6 from "./rice6.png";
+
+import puri_1 from "./puri1.png";
+import puri_2 from "./puri2.png";
+import puri_3 from "./puri3.png";
 
 import add_icon_white from "./add_icon_white.png";
 import add_icon_green from "./add_icon_green.png";
@@ -150,6 +181,22 @@ export const menu_list = [
   {
     menu_name: "Noodles",
     menu_image: menu_8,
+  },
+  {
+    menu_name: "Veg Curry",
+    menu_image: menu_9,
+  },
+  {
+    menu_name: "Thali",
+    menu_image: menu_10,
+  },
+  {
+    menu_name: "Rice",
+    menu_image: menu_11,
+  },
+  {
+    menu_name: "Puri",
+    menu_image: menu_12,
   },
 ];
 
@@ -260,6 +307,22 @@ export const food_list = [
     price: 12,
     description:
       "Food provides essential nutrients for overall health and well-being",
+    category: "Deserts",
+  },
+  {
+    _id: "130",
+    name: "Gulab Jamun",
+    image: desert_1,
+    price: 40,
+    description: "Soft milk dumplings soaked in sugar syrup",
+    category: "Deserts",
+  },
+  {
+    _id: "131",
+    name: "Kaju Kheer",
+    image: desert_2,
+    price: 50,
+    description: "Creamy rice pudding with cashews",
     category: "Deserts",
   },
   {
@@ -441,5 +504,179 @@ export const food_list = [
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Noodles",
+  },
+  {
+    _id: "901",
+    name: "Garlic Mushroom",
+    image: pureveg_1,
+    price: 60,
+    description: "Tasty stir-fried garlic mushrooms",
+    category: "Pure Veg",
+  },
+  {
+    _id: "902",
+    name: "Fried Cauliflower",
+    image: pureveg_2,
+    price: 55,
+    description: "Crispy fried cauliflower florets",
+    category: "Pure Veg",
+  },
+  {
+    _id: "903",
+    name: "Mix Veg Pulao Rice",
+    image: pureveg_3,
+    price: 65,
+    description: "Aromatic rice with seasonal vegetables",
+    category: "Pure Veg",
+  },
+  {
+    _id: "904",
+    name: "Zucchini Stir-Fry",
+    image: pureveg_4,
+    price: 50,
+    description: "Light and fresh zucchini with mild spices",
+    category: "Pure Veg",
+  },
+
+  // --- menu_10: Thali ---
+  {
+    _id: "1000",
+    name: "Rice Veg Thali",
+    image: thali_8,
+    price: 80,
+    description: "Small thali with dal, sabzi, rice & roti",
+    category: "Thali",
+  },
+  {
+    _id: "1001",
+    name: "Mini Veg Thali",
+    image: thali_1,
+    price: 90,
+    description: "Small thali with dal, sabzi, rice & roti",
+    category: "Thali",
+  },
+  {
+    _id: "1002",
+    name: "Deluxe Veg Thali",
+    image: thali_2,
+    price: 120,
+    description: "Rich veg thali with paneer, dal, rice & roti",
+    category: "Thali",
+  },
+  {
+    _id: "1003",
+    name: "South Indian Thali",
+    image: thali_3,
+    price: 110,
+    description: "Thali with sambhar, rasam, curd rice & more",
+    category: "Thali",
+  },
+  {
+    _id: "1004",
+    name: "Punjabi Thali",
+    image: thali_4,
+    price: 130,
+    description: "Thali with chole, dal makhani, rice & naan",
+    category: "Thali",
+  },
+  {
+    _id: "1005",
+    name: "Special Feast Thali",
+    image: thali_5,
+    price: 150,
+    description: "Festive thali with variety of dishes & desserts",
+    category: "Thali",
+  },
+  {
+    _id: "1006",
+    name: "Special Thali",
+    image: thali_6,
+    price: 130,
+    description: "Variety of dishes & desserts",
+    category: "Thali",
+  },
+  {
+    _id: "1007",
+    name: "Ultimate Feast Thali",
+    image: thali_7,
+    price: 160,
+    description: "Festive thali",
+    category: "Thali",
+  },
+
+  // --- menu_11: Rice ---
+  {
+    _id: "1101",
+    name: "Jeera Rice",
+    image: rice_1,
+    price: 50,
+    description: "Simple and fragrant cumin-flavored rice",
+    category: "Rice",
+  },
+  {
+    _id: "1102",
+    name: "Veg Fried Rice",
+    image: rice_2,
+    price: 70,
+    description: "Stir-fried rice with vegetables and soy sauce",
+    category: "Rice",
+  },
+  {
+    _id: "1103",
+    name: "Curd Rice",
+    image: rice_3,
+    price: 55,
+    description: "Refreshing curd mixed with soft rice",
+    category: "Rice",
+  },
+  {
+    _id: "1104",
+    name: "Biryani Rice",
+    image: rice_4,
+    price: 80,
+    description: "Spiced basmati rice cooked with aromatic herbs",
+    category: "Rice",
+  },
+  {
+    _id: "1105",
+    name: "Plain Steamed Rice",
+    image: rice_5,
+    price: 40,
+    description: "Soft steamed white rice",
+    category: "Rice",
+  },
+  {
+    _id: "1106",
+    name: "Steamed Rice",
+    image: rice_6,
+    price: 30,
+    description: "Soft steamed white rice",
+    category: "Rice",
+  },
+
+  // --- menu_12: Puri ---
+  {
+    _id: "1201",
+    name: "Plain Puri",
+    image: puri_1,
+    price: 30,
+    description: "Fluffy deep-fried puris",
+    category: "Puri",
+  },
+  {
+    _id: "1202",
+    name: "Masala Puri",
+    image: puri_2,
+    price: 45,
+    description: "Puris stuffed with spiced potato filling",
+    category: "Puri",
+  },
+  {
+    _id: "1203",
+    name: "Chole Puri",
+    image: puri_3,
+    price: 60,
+    description: "Puri served with spicy chickpea curry",
+    category: "Puri",
   },
 ];

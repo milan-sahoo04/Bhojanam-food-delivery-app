@@ -2,13 +2,16 @@ import React from "react";
 import "./Navbar.css";
 import { assets } from "../../assets/assets";
 
-const Nvbar = () => {
+const Navbar = () => {
   return (
     <div className="navbar">
-      <img className="logo" src={assets.logo} alt="" />
-      <img className="profile" src={assets.profile_image} alt="" />
+      <img className="logo" src={assets.logo} alt="Logo" />
+
+      <h1 className="admin-title">Admin Section</h1>
+
+      <img className="profile" src={assets.profile_image} alt="Profile" />
     </div>
   );
 };
 
-export default Nvbar;
+export default Navbar;

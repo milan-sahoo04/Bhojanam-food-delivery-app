@@ -3,16 +3,26 @@ import Chef from "../models/chefModel.js";
 
 export const createChef = async (req, res) => {
   try {
-    const { name, email, phone, experience, specialty } = req.body;
-    const image = req.file ? req.file.filename : "";
-
-    const chef = new Chef({
+    const {
       name,
+      location,
       email,
       phone,
       experience,
       specialty,
-      image,
+      bio,
+      accepted,
+    } = req.body;
+
+    const chef = new Chef({
+      name,
+      location,
+      email,
+      phone,
+      experience,
+      specialty,
+      bio,
+      accepted,
     });
 
     await chef.save();
